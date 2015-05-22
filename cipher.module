@@ -25,9 +25,27 @@ function cipher_form() {
 		'#element_validate' => array('element_validate_integer_positive'),
 		'#required' => TRUE,
 	);
+
 	$form['shift_direction'] = array(
-		
+		'#title' => 'Shift Direction',
+		'#type' => 'textfield',
+		'#description' => t('Please enter the direction of the shift cipher, i.e., Right or Left'),
+		'#element_validate' => array('element_validate_direction'),
+		'#required' => TRUE,
 	);
+
+	$form['input_phrase'] = array(
+		'#title' => 'Input Phrase',
+		'#type' => 'textfield',
+		'#description' => t('Please enter a phrase that you would like to be encrypted'),
+		'#element_validate' => array('element_validate_input_phrase'),
+		'#required' => TRUE,
+	);
+	$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Encrypt Phrase',
+	);
+	return $form;
 }
 
 
