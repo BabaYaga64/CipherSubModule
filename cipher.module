@@ -19,7 +19,7 @@ function cipher_menu() {
 
 function cipher_form() {
 	$form['shift_value'] = array(
-		'#title' => 'Shift direction',
+		'#title' => 'Shift Value',
 		'#type' => 'textfield',
 		'#description' => t('Please enter your numerical shift value'),
 		'#element_validate' => array('element_validate_integer_positive'),
