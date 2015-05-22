@@ -1,0 +1,5 @@
+name = Cipher
+description = Encrypts a user's input phrase using shift cipher.
+package = Epicodus Examples
+core = 7.x
+files[] = cipher.module
