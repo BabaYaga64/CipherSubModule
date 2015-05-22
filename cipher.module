@@ -41,6 +41,7 @@ function cipher_form() {
 		'#element_validate' => array('element_validate_input_phrase'),
 		'#required' => TRUE,
 	);
+
 	$form['submit'] = array(
 		'#type' => 'submit',
 		'#value' => 'Encrypt Phrase',
@@ -54,7 +55,42 @@ function element_validate_direction($element) {
 	}
 }
 
+function element_validate_input_phrase($element) {
+	// If anything but letters and spaces are found in the array, then return error message
+	$input_phrase_array = $element['#value'];
+	$exceptions = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "@", "#", "$", "%");
+	$exploded_words = explode(" ", $element['#value']);
+	$exploded_characters = explode("", $exploded_words);
 
+	foreach($exploded_characters as $character)
+        {
+                if (in_array($character, $exceptions))
+                {
+                    form_error($element, t('Please enter a word only, no numbers or special characters'));
+
+                } else {
+                	return //input values in encrypyted form
+                }
+             }
+         }
+
+}
+
+
+function cipher_form_submit($form, &$form_state) {
+	// $shift_value = $form_state['values']['shift_value'];
+	// $shift_direction = $form_state['values']['shift_direction'];
+	// $input_phrase = $form_state['values']['input_phrase'];
+
+	$_SESSION[]
+	//Store the results of the shift ciphon here?
+
+	$form_state['redirect'] = 'success';
+}
+
+function cipher_success() {
+	//Return the results of the shift ciphon here?
+}
 
 
 
