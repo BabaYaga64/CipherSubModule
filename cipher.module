@@ -48,6 +48,12 @@ function cipher_form() {
 	return $form;
 }
 
+function element_validate_direction($element) {
+	if ($element['#value'] != "left" || "Left" || "right" || "Right") {
+		form_error($element, t('Direction entered must be right or left'));
+	}
+}
+
 
 
 
